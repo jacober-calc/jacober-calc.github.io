@@ -58,6 +58,43 @@ add entries to `nav` in `zensical.toml` when they should appear in site navigati
 Edit an existing Markdown file whenever an article needs updating. No blog plugin,
 post metadata, or publication dates are required.
 
+## Article formatting
+
+The site follows the visual conventions of the
+[SwissMicros DM32 User Manual](https://technical.swissmicros.com/dm32/doc/dm32_user_manual.html):
+white pages, warm brown headings, dark grey body text, flat black physical-key
+labels, orange and blue shifted functions, and grey calculator-display text.
+The stylesheet is `docs/stylesheets/manual.css`. It uses system sans-serif fonts;
+the manual's domain-licensed Theinhardt font files are not bundled or requested.
+
+Use ordinary Markdown headings (`#`, `##`, `###`). Add section numbers to the
+heading text yourself only when an article needs them. For inline notation:
+
+| Meaning | Markdown / HTML |
+| --- | --- |
+| Physical key | `**XEQ**{.button}` |
+| Key with a special character | `**√x**{.button}` or `**Σ+**{.button}` |
+| Orange shifted function | `**GTO**{.or}` |
+| Blue shifted function | `**EQN**{.bl}` |
+| Calculator display / soft-menu text | `<kbd>RAD</kbd>` |
+| Letter selection | `[Q]` |
+| File path or program source | ordinary backticks / fenced code blocks |
+
+For example, `2 **ENTER**{.button} 3 **+**{.button}` uses plain digits and black key
+labels. This syntax accepts literal plus signs without escaping. Function labels
+can use normal Unicode: √x, eˣ, yˣ, Σ+, π, ×, ÷, ▲, ▼, ≤, ≥, and ≠. For compound
+labels, inline HTML such as `<sup>` and `<sub>` is also available.
+
+When a shift key itself needs to appear as a blank coloured rectangle, use:
+
+```html
+<span class="ors" role="img" aria-label="Orange shift">&nbsp;</span>
+<span class="bls" role="img" aria-label="Blue shift">&nbsp;</span>
+```
+
+The attribute syntax uses Zensical's existing `attr_list` support. No additional
+packages, fonts, scripts, or remote stylesheet services are needed.
+
 ## GitHub Pages
 
 In the repository's **Settings > Pages**, set **Source** to **GitHub Actions**.
