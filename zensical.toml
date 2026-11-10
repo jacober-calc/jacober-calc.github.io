@@ -3,7 +3,10 @@ site_name = "Blog32"
 site_description = "Calculator projects, notes, and articles."
 site_url = "https://jacober-calc.github.io/"
 repo_url = "https://github.com/jacober-calc/jacober-calc.github.io"
+extra_css = ["stylesheets/manual.css"]
 nav = [{ "Home" = "index.md" }]
 
 [project.theme]
+variant = "classic"
 font = false
+features = ["toc.integrate"]

@@ -1,0 +1,269 @@
+/* Original site styling based on the DM32 manual's visual conventions.
+   Reference: https://technical.swissmicros.com/dm32/doc/dm32_user_manual.html
+   The manual's domain-licensed Theinhardt fonts are not included or loaded. */
+:root,
+[data-md-color-scheme="default"] {
+  --md-text-font: Arial, Helvetica, sans-serif;
+  --md-code-font: Menlo, Monaco, Consolas, "Courier New", monospace;
+  --md-default-bg-color: #fff;
+  --md-default-fg-color: #3a3a3a;
+  --md-default-fg-color--light: #7a5f48;
+  --md-default-fg-color--lighter: #dbd3cc;
+  --md-primary-fg-color: #fff;
+  --md-primary-bg-color: #7a5f48;
+  --md-primary-bg-color--light: #7a5f48;
+  --md-accent-fg-color: #7a5f48;
+  --md-typeset-a-color: #7a5f48;
+  --md-code-fg-color: #333;
+  --md-code-bg-color: #f5f5f5;
+}
+
+body,
+input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.md-grid {
+  max-width: 76rem;
+}
+
+.md-header {
+  background: #fff;
+  border-bottom: 1px solid #dbd3cc;
+  color: #7a5f48;
+  box-shadow: none;
+}
+
+.md-header__title {
+  font-weight: 700;
+}
+
+.md-nav {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.md-nav__title {
+  box-shadow: none;
+  color: #7a5f48;
+}
+
+.md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-content__inner {
+  max-width: 62.5em;
+}
+
+.md-typeset {
+  color: #3a3a3a;
+  font-size: 18px;
+  line-height: 1.42857143;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  color: #7a5f48;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.md-typeset h1 {
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  margin: 20px 0 30px;
+}
+
+.md-typeset h2 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: normal;
+  margin: 100px 0 10px;
+}
+
+.md-typeset h3 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: normal;
+  margin: 100px 0 10px;
+}
+
+.md-typeset h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 25px 0 6px;
+}
+
+.md-typeset p {
+  margin: 0 0 10px;
+}
+
+.md-typeset li {
+  margin-bottom: 5px;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+}
+
+.md-typeset a:focus-visible {
+  outline: 2px solid #7a5f48;
+  outline-offset: 3px;
+}
+
+.md-typeset blockquote {
+  border-left: 5px solid #dbd3cc;
+  color: #3a3a3a;
+}
+
+/* Paths and program source are distinct from calculator display text. */
+.md-typeset code {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  font-size: 90%;
+  padding: 2px 4px;
+}
+
+.md-typeset pre > code {
+  border: 0;
+  font-size: inherit;
+  padding: 0.8rem;
+}
+
+/* Use <kbd> for LCD text, including messages and soft-menu labels. */
+.md-typeset kbd {
+  background: #dbd3cc;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #000;
+  font-family: var(--md-code-font);
+  font-size: 90%;
+  font-weight: 700;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+/* Physical keys: **XEQ**{.button}, **√x**{.button}, **Σ+**{.button}. */
+.md-typeset .button {
+  background: #3a3a3a;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #fff;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  padding: 0 5px;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+/* Shifted function names use the manual's printed-label colours. */
+.md-typeset .or {
+  color: #f99a2b;
+  font-weight: 700;
+}
+
+.md-typeset .bl {
+  color: #97b6e6;
+  font-weight: 700;
+}
+
+/* Blank coloured rectangles identify the shift keys when explicitly needed. */
+.md-typeset .ors,
+.md-typeset .bls {
+  border: 0;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+  min-width: 1.5em;
+  padding: 0 5px;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.md-typeset .ors {
+  background: #f99a2b;
+}
+
+.md-typeset .bls {
+  background: #97b6e6;
+}
+
+.md-typeset table:not([class]) {
+  border: 0;
+  border-collapse: collapse;
+  box-shadow: none;
+  color: #3a3a3a;
+  font-size: inherit;
+  margin: 25px 0 50px;
+  min-width: 100%;
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  background: transparent;
+  border-bottom: 0;
+  border-top: 1px solid #dbd3cc;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) th {
+  border-bottom: 2px solid #dbd3cc;
+  font-weight: 700;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  background: #fff;
+  border-color: #dbd3cc;
+  box-shadow: none;
+  font-size: inherit;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: #f5f2ef;
+  color: #7a5f48;
+}
+
+@media screen and (max-width: 600px) {
+  .md-typeset h2 {
+    font-size: 28px;
+    margin-top: 60px;
+  }
+
+  .md-typeset h3 {
+    font-size: 23px;
+    margin-top: 50px;
+  }
+}
+
+@media print {
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3,
+  .md-typeset h4 {
+    break-after: avoid;
+  }
+
+  .md-typeset .button,
+  .md-typeset .ors,
+  .md-typeset .bls {
+    print-color-adjust: exact;
+  }
+}
