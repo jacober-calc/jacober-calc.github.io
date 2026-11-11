@@ -58,6 +58,25 @@ add entries to `nav` in `zensical.toml` when they should appear in site navigati
 Edit an existing Markdown file whenever an article needs updating. No blog plugin,
 post metadata, or publication dates are required.
 
+## Homepage article index
+
+The homepage is a plain article list in `docs/index.md`, ordered newest first.
+Each entry has an ISO date in its `<time datetime="...">`, a readable date, a linked
+article heading, a short description, and a list of topics. Keep descriptions to
+one or two sentences and topics concise. Topic labels are descriptive text.
+
+To add an article, create its Markdown file under `docs/articles/`, add an
+`<article class="article-entry" markdown="1">` entry inside the homepage's
+`article-index` container, and add the article to `nav` in `zensical.toml`. Replace
+the empty-list message when adding the first entry. Each entry uses these classes:
+
+- `article-entry__meta`: date and optional publication status.
+- `article-entry__body`: linked heading and short description.
+- `article-topics`: a list of plain-text topic labels.
+
+The list uses the site's existing Markdown and CSS support; it needs no additional
+packages or scripts.
+
 ## Article formatting
 
 The site follows the visual conventions of the
